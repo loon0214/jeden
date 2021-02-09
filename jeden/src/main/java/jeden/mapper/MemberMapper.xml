@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="jeden.mapper.MemberMapper">
+	
+	<!-- <select id="check_id" parameterType="String" resultType="int">
+		SELECT COUNT (*)
+		FROM MEMBER 
+		WHERE ID = #{id}
+	</select> -->
+	
+	<select id='check_id' resultType='int'>
+		SELECT COUNT (*)
+		FROM MEMBER 
+		WHERE ID = #{id}
+	</select>
+	
+	<select id="check_email" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM MEMBER
+		WHERE EMAIL= #{email}
+	</select>
+	
+	<insert id="join" parameterType="jeden.vo.MemberVO">
+		INSERT INTO MEMBER
+		VALUES(#{id}, #{pw}, #{email}, now(), #{name}, #{phone}, #{bday},
+				#{adres1}, #{adres2}, #{adres3}, 'false', #{approval_key})
+	</insert>
+	
+	
+</mapper>

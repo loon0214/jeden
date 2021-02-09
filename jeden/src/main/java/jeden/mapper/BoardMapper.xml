@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace="jeden.mapper.BoardMapper">
+ 
+    <select id="boardCount" resultType="int">
+        SELECT COUNT(*)
+        FROM BOARD
+    </select>
+    
+    <select id="boardList" resultType="jeden.vo.BoardVO">
+    	SELECT * 
+    	FROM BOARD
+    	ORDER BY BNO DESC
+    	LIMIT #{startList}, #{listSize}
+    </select>
+    
+    <select id="getBoardListCnt" resultType="int">
+    	SELECT COUNT(*) as listCnt
+    	FROM BOARD
+    </select>
+    
+    <select id="boardDetail" parameterType="int" resultType="jeden.vo.BoardVO">
+    	SELECT * 
+    	FROM BOARD
+    	WHERE BNO = #{bno}
+    </select>
+    
+    <insert id="boardPost" parameterType="jeden.vo.BoardVO">
+    	INSERT INTO 
+    		BOARD(BNO, TITLE, CONTENT, REG_DATE)
+    		VALUES(#{bno}, #{title}, #{content}, now())
+    </insert>
+    
+    <update id="boardEdit" parameterType="jeden.vo.BoardVO">
+    	UPDATE BOARD
+    		SET
+    	<if test="title != null">
+    		TITLE = #{title}
+    	</if>
+    	<if test="title != null and content != null">,</if>
+    	<if test="content != null">
+    		CONTENT = #{content}
+    	</if>
+    	WHERE BNO = #{bno}
+    </update>
+    
+    <delete id="boardDel" parameterType="int">
+    	DELETE
+    	FROM BOARD
+    	WHERE BNO = #{bno}
+    </delete>
+    
+</mapper>
+
+
