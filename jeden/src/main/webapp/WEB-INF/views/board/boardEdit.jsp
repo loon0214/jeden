@@ -15,15 +15,15 @@
 <h2> Edit Post </h2>
     <form action="/boardEditProc" method="post">
       <div class="form-group">
-        <label for="title">제목</label>
+        <label for="title">title</label>
         <input type="text" class="form-control" id="title" name="title" value="${boardDetail.title}">
       </div>
       <div class="form-group">
-        <label for="content">내용</label>
+        <label for="content">content</label>
         <textarea class="form-control" id="content" name="content" rows="3">${boardDetail.content}</textarea>
       </div>
       <input type="hidden" name="bno" value="${bno}"/>
-      <button type="submit" class="btn btn-primary">수정</button>
+      <button type="submit" class="btn btn-primary">Edit</button>
     </form>
 </div>
  

@@ -16,19 +16,19 @@
 
     <form action="/boardPostProc" method="post">
       <div class="form-group">
-        <label>제목</label>
+        <label>title</label>
         <p>${boardDetail.title}</p>
       </div>
       <div class="form-group">
-        <label>작성자</label>
+        <label>writer</label>
 		<p>user</p>
       </div>
       <div class="form-group">
-        <label>작성날짜</label>
+        <label>date</label>
         <p>${boardDetail.reg_date}</p>
       </div>
       <div class="form-group">
-        <label>내용</label>
+        <label>content</label>
         <p>${boardDetail.content}</p>
       </div>
     </form>

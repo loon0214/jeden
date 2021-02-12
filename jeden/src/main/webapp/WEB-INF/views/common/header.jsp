@@ -16,8 +16,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active"><a class="nav-link" onclick="location.href='../member/login'">login</a></li>
-      <li class="nav-item active"><a class="nav-link" onclick="location.href='../member/join'">Join</a></li>
+      <li class="nav-item active"><a class="nav-link" onclick="location.href='../../member/login'">login</a></li>
+      <li class="nav-item active"><a class="nav-link" onclick="location.href='../../member/join'">Join</a></li>
    </ul>
   </div>
 </div>

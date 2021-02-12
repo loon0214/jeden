@@ -12,14 +12,14 @@
 <h2> new Post </h2>
     <form action="/boardPostProc" method="post">
       <div class="form-group">
-        <label for="subject">제목</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력하세요.">
+        <label for="subject">title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="type the title.">
       </div>
       <div class="form-group">
-        <label for="content">내용</label>
-        <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+        <label for="content">content</label>
+        <textarea class="form-control" id="content" name="content" rows="3" placeholder='type the content'></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">작성</button>
+      <button type="submit" class="btn btn-primary">post</button>
     </form>
 </div>
 <%@ include file="../common/code.jsp" %>
