@@ -17,9 +17,6 @@ public class MemberVO {
 	private String adres2;
 	private String adres3;
 	
-	private String approval_status;
-	private String approval_key;
-	
 	public String getId() {
 		return id;
 	}
@@ -79,17 +76,5 @@ public class MemberVO {
 	}
 	public void setAdres3(String adres3) {
 		this.adres3 = adres3;
-	}
-	public String getApproval_status() {
-		return approval_status;
-	}
-	public void setApproval_status(String approval_status) {
-		this.approval_status = approval_status;
-	}
-	public String getApproval_key() {
-		return approval_key;
-	}
-	public void setApproval_key(String approval_key) {
-		this.approval_key = approval_key;
 	}
 }

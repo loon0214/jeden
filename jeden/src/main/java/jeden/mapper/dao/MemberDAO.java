@@ -11,21 +11,21 @@ import jeden.vo.MemberVO;
 public class MemberDAO {
 	
 	@Autowired
-	SqlSession sqlsession = null;
+	SqlSession sql;
 
 	// check ID
 	public int check_id(String id) throws Exception{
-		return sqlsession.selectOne("check_id", id);
+		return sql.selectOne("check_id", id);
 	}
 	
 	// check Email
 	public int check_email(String email) throws Exception{
-		return sqlsession.selectOne("check_email", email);
+		return sql.selectOne("check_email", email);
 	}
 	
 	// Join
 	@Transactional
 	public int join(MemberVO member) throws Exception{
-		return sqlsession.insert("join", member);
+		return sql.insert("join", member);
 	}
 }

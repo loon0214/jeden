@@ -156,7 +156,7 @@ body {
 	        <button type="button" style="float: right;" class="btn btn-outline-dark btn-sm" onclick="PostCode();"><i class="fa fa-search"></i> find postal code</button>                               
         </div>
         <div class="form-group">
-            <input class="form-control" style="top: 5px;" placeholder="Road Name Ares" name="adres2" id="adres2" type="text" readonly="readonly" />
+            <input class="form-control" style="top: 5px;" placeholder="Road Name Adres" name="adres2" id="adres2" type="text" readonly="readonly" />
         </div>
         <div class="form-group">
             <input class="form-control" placeholder="Detailed Adres" name="adres3" id="adres3" type="text"  />
