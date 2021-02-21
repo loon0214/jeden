@@ -5,7 +5,7 @@
 
 <mapper namespace="jeden.mapper.MemberMapper">
 	
-	<insert id="join">
+	<insert id="join" parameterType="jeden.vo.MemberVO">
 		INSERT INTO MEMBER
 		VALUES(#{id}, #{pw}, #{email}, now(), #{name}, #{phone}, #{bday},
 				#{adres1}, #{adres2}, #{adres3})

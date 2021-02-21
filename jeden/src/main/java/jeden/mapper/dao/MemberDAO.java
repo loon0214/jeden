@@ -1,4 +1,4 @@
-package jeden.mapper;
+package jeden.mapper.dao;
 
 import javax.inject.Inject;
 
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import jeden.vo.MemberVO;
 
-@Repository
+@Repository("jeden.mapper.dao.MemberDAO")
 public class MemberDAO {
 	
 	@Inject
@@ -15,6 +15,6 @@ public class MemberDAO {
 	
 	// Join
 	public void join(MemberVO member) throws Exception{
-		sql.insert("MemberMapper.join", member);
+		sql.insert("join", member);
 	}
 }

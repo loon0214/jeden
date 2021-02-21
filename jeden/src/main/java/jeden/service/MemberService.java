@@ -4,7 +4,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import jeden.mapper.MemberDAO;
+import jeden.mapper.dao.MemberDAO;
 import jeden.vo.MemberVO;
 
 @Service

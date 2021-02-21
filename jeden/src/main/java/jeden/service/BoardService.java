@@ -9,12 +9,8 @@ import jeden.common.Pagination;
 import jeden.mapper.BoardMapper;
 import jeden.vo.BoardVO;
 
-// @Service("jeden.service.BoardService")
 @Service
 public class BoardService {
-	
-/*	@Resource(name="jeden.mapper.BoardMapper")
-	BoardMapper boardMapper;*/
 	
 	@Autowired
 	private BoardMapper boardMapper;
