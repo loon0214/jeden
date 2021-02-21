@@ -32,6 +32,6 @@ public class MemberController {
 		
 		memberService.join(member);
 		
-		return null;		
+		return "redirect:/board/boardList";
 	}
 }

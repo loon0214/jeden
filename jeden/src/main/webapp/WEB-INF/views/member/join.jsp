@@ -16,6 +16,32 @@
 $(function(){
 
     $("#joinForm").submit(function(){
+
+    	// required
+    	if($("#id").val()==""){
+			alert("please, type the ID.");
+			$("#id").focus();
+			return false;
+		}
+
+    	if($("#pw").val()==""){
+			alert("please, type the Password.");
+			$("#pw").focus();
+			return false;
+		}
+
+    	if($("#pw2").val()==""){
+			alert("please, type the Password Confirm.");
+			$("#pw2").focus();
+			return false;
+		}
+
+    	if($("#email").val()==""){
+			alert("please, type the E-mail Adres.");
+			$("#email").focus();
+			return false;
+		}
+		// required END
         
        if($("#pw").val() !== $("#pw2").val()){
           alert("비밀번호가 다릅니다.");
@@ -78,8 +104,7 @@ function PostCode() {
                 document.getElementById('adres2').value = fullRoadAddr;
             }
          }).open();
-     }
-   
+     }	// Postal Code   
    
 </script>
 <style>
@@ -115,18 +140,18 @@ body {
 
 		<p class="hint-text">type the your information to join.</p>
         <div class="form-group">
-        	<input type="text" class="form-control" id="id" name="id" placeholder="ID" required autofocus>
+        	<input type="text" class="form-control" id="id" name="id" placeholder="ID" autofocus>
             <button type="button" style="float: right;" class="btn btn-outline-dark btn-sm" onclick="check_id();"><i class="fa fa-search"></i> check ID</button>                               
             
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" id="pw" name="pw" placeholder="Password" required>
+            <input type="password" class="form-control" id="pw" name="pw" placeholder="Password">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" id="pw2" name="pw2" placeholder="Confirm Password" required>
+            <input type="password" class="form-control" id="pw2" name="pw2" placeholder="Confirm Password">
         </div>   
         <div class="form-group">
-        	<input type="email" class="form-control" name="email" placeholder="Email" required>
+        	<input type="email" class="form-control" id="email" name="email" placeholder="Email">
 			<span id="email_check" class="text-red"></span>
         </div>
         
