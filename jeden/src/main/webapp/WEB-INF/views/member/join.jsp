@@ -8,68 +8,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<SCRIPT src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></SCRIPT><!-- 다음 주소 API -->
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script><!-- 다음 주소 -->
+<script src="/resources/js/addressapi.js"></script><!-- 다음 주소 -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+
 <script>
-(function(){
-	$("#joinForm").submit(function(){
-		if($("#pw").val() !== $("#pw2").val()){
-			alert("비밀번호가 다릅니다.");
-			$("#pw").val("").focus();
-			$("#pw2").val("");
-			return false;
-		}else if ($("#pw").val().length < 3) {
-			alert("비밀번호는 3자 이상으로 설정해야 합니다.");
-			$("#pw").val("").focus();
-			return false;
-		}else if($.trim($("#pw").val()) !== $("#pw").val() || $.trim($("#email").val()) !== $("#email").val() || $.trim($("#id").val()) !== $("#id").val()){
-			alert("공백은 입력이 불가능합니다.");
-			return false;
-		}
-	})
-	
-	$("#id").keyup(function() {
-		$.ajax({
-			url : "../member/check_id",
-			type : "POST",
-			data : {
-				id : $("#id").val()
-			},
-			success : function(result) {
-				if (result == 1) {
-					$("#check_id").html("중복된 아이디가 있습니다.");
-					$("#joinBtn").attr("disabled", "disabled");
-				} else {
-					$("#check_id").html("");
-					$("#joinBtn").removeAttr("disabled");
-				}
-			},
-		})
-	});
-	
-	$("#email").keyup(function(){
-		$.ajax({
-			url : "./check_email",
-			type : "POST",
-			data : {
-				email : $("#email").val()
-			},
-			success : function(result) {
-				if (result == 1) {
-					$("#email_check").html("중복된 이메일이 있습니다.");
-				} else {
-					$("#email_check").html("");
-				}
-			},
-		})
-	});
-})
+$(function(){
 
+    $("#joinForm").submit(function(){
+        
+       if($("#pw").val() !== $("#pw2").val()){
+          alert("비밀번호가 다릅니다.");
+          $("#pw").val("").focus();
+          $("#pw2").val("");
+          return false;
+    	  }	// password match
 
-//////////////////////////////////////// 다음 주소 ///////////////////////////////////
-    function PostCode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
+       else if($("#pw").val().length < 3) {
+          alert("비밀번호는 3자 이상으로 설정해야 합니다.");
+          $("#pw").val("").focus();
+          return false; 
+          }	// password condition
+          
+  /*   else if(!pw.value.match(/([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~,-])|([!,@,#,$,%,^,&,*,?,_,~,-].*[a-zA-Z0-9])/)) {
+          alert("비밀번호는 영문(대소문자구분),숫자,특수문자(~!@#$%^&*()-_? 만 허용)를 혼용하여 8~16자를 입력해주세요.");
+          return false;
+    	  } */
+ 	  
+    }) // joinForm END
+}) // function END
+   
+function PostCode() {
+         new daum.Postcode({
+             oncomplete: function(data) {
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
  
                 // 도로명 주소의 노출 규칙에 따라 주소를 조합한다.
@@ -96,13 +67,20 @@
                 }
  
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                console.log(data.zonecode);
+                console.log(fullRoadAddr);
+                
+                
+                $("[name=adres1]").val(data.zonecode);
+                $("[name=adres2]").val(fullRoadAddr);
+                
                 document.getElementById('adres1').value = data.zonecode; //5자리 새우편번호 사용
                 document.getElementById('adres2').value = fullRoadAddr;
-                document.getElementById('adres3').focus();
             }
-        }).open();
-    }
-
+         }).open();
+     }
+   
+   
 </script>
 <style>
 body {
@@ -138,7 +116,8 @@ body {
 		<p class="hint-text">type the your information to join.</p>
         <div class="form-group">
         	<input type="text" class="form-control" id="id" name="id" placeholder="ID" required autofocus>
-            <span id="check_id"></span>
+            <button type="button" style="float: right;" class="btn btn-outline-dark btn-sm" onclick="check_id();"><i class="fa fa-search"></i> check ID</button>                               
+            
         </div>
 		<div class="form-group">
             <input type="password" class="form-control" id="pw" name="pw" placeholder="Password" required>

@@ -5,25 +5,7 @@
 
 <mapper namespace="jeden.mapper.MemberMapper">
 	
-	<!-- <select id="check_id" parameterType="String" resultType="int">
-		SELECT COUNT (*)
-		FROM MEMBER 
-		WHERE ID = #{id}
-	</select> -->
-	
-	<select id='check_id' resultType='int'>
-		SELECT COUNT (*)
-		FROM MEMBER 
-		WHERE ID = #{id}
-	</select>
-	
-	<select id="check_email" parameterType="String" resultType="int">
-		SELECT COUNT(*)
-		FROM MEMBER
-		WHERE EMAIL= #{email}
-	</select>
-	
-	<insert id="join" parameterType="jeden.vo.MemberVO">
+	<insert id="join">
 		INSERT INTO MEMBER
 		VALUES(#{id}, #{pw}, #{email}, now(), #{name}, #{phone}, #{bday},
 				#{adres1}, #{adres2}, #{adres3})

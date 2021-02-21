@@ -15,10 +15,22 @@
   	<span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <c:if test = "${member == null}">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active"><a class="nav-link" onclick="location.href='../../member/login'">login</a></li>
       <li class="nav-item active"><a class="nav-link" onclick="location.href='../../member/join'">Join</a></li>
    </ul>
+  </c:if>
+  <c:if test = "${member != null}">
+  	<p>${member.name} Dzien Dobry :) </p>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active"><a class="nav-link" onclick="location.href='../../member/login'">logout</a></li>
+      <li class="nav-item active"><a class="nav-link" onclick="location.href='../../member/join'">mypage</a></li>
+   </ul>
+  </c:if>
+  <c:if test="${msg == false}">
+  	<p style='color: red;'>login has failed. check your ID and Password.</p>
+  </c:if>
   </div>
 </div>
 </nav>
