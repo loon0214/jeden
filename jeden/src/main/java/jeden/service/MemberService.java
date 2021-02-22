@@ -13,8 +13,13 @@ public class MemberService {
 	@Inject
 	MemberDAO dao;
 	
-	public void join(MemberVO member) throws Exception{
-		dao.join(member);
-		
+	// Join
+	public void join(MemberVO vo) throws Exception{
+		dao.join(vo);
+	}
+	
+	// login
+	public MemberVO login(MemberVO vo) throws Exception{
+		return dao.login(vo);
 	}
 }

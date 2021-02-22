@@ -14,7 +14,12 @@ public class MemberDAO {
 	SqlSession sql;
 	
 	// Join
-	public void join(MemberVO member) throws Exception{
-		sql.insert("join", member);
+	public void join(MemberVO vo) throws Exception{
+		sql.insert("join", vo);
+	}
+	
+	// login
+	public MemberVO login(MemberVO vo) throws Exception{
+		return sql.selectOne("login", vo);
 	}
 }

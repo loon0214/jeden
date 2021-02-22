@@ -11,12 +11,12 @@
 				#{adres1}, #{adres2}, #{adres3})
 	</insert>
 	
-<!-- 	<select id="login" resultType="jeden.vo.MemberVO">
-		SELECT	ID, PW
-		FROM	MEMBER
-		WHERE	ID = #{id} AND PW = #{pw}
+ 	<select id="login" resultType="jeden.vo.MemberVO">
+		SELECT ID, PW
+		FROM MEMBER
+		WHERE ID = #{id} AND PW = #{pw}
 	</select>
-	 -->
+	
 
 	
 	
