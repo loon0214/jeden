@@ -24,7 +24,7 @@
   <c:if test = "${member != null}">
   	<p>${member.name} Dzien Dobry :) </p>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active"><a class="nav-link" onclick="location.href='../../member/login'">logout</a></li>
+      <li class="nav-item active"><a class="nav-link" onclick="location.href='../../member/login'" id='logoutBtn'>logout</a></li>
       <li class="nav-item active"><a class="nav-link" onclick="location.href='../../member/join'">mypage</a></li>
    </ul>
   </c:if>
