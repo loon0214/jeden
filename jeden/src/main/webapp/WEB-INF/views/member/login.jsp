@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="../common/code.jsp" %>
+<%@ include file="../common/header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,12 +8,6 @@
 <title>Login Form</title>
 <script src="${contextPath}/resources/js/js.cookie.js"></script><!-- 쿠키 -->
 <script>
- 	$(function(){	// ID 찾기 form 이동
-		$("#find_id_btn").click(function(){
-			location.href='../member/find_id_form';
-		})
-	})
-	
 	
 /////////////////////////////////////// ID 저장 cookie ////////////////////////////////////////////////
 $(document).ready(function(){
@@ -66,7 +62,7 @@ function getCookie(cookieName) {
     return unescape(cookieValue);
 }
 
-//<!-- END END END END END END END END END END ID 저장 cookie END END END END END END END END END END  -->
+<!-- END END END END END END END END END END ID 저장 cookie END END END END END END END END END END  -->
 	
 
 
@@ -123,6 +119,7 @@ function getCookie(cookieName) {
 </div>
 <!-- END END END END END END END END END END login END END END END END END END END END END  -->
 	
-<br><br><br><br><br><br><%@ include file="../common/footer.jsp" %>
+<br><br><br><br><br><br><br><br><br><br>
+<%@ include file="../common/footer.jsp" %>
 </body>
 </html>

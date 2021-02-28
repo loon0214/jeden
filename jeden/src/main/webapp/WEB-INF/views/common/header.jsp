@@ -5,35 +5,35 @@
 <style>
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<div class='container'>
-<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ logo $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
-      <a class="navbar-brand" onclick="location.href='../../board/boardList'"><i class='fas fa-cloud' style='font-size:55px; text-indent: 0.4em;'></i><br>
-      <font style="font-size:24px; font-weight:bold;" face = "Comic sans MS" size ="5">cloud Story</font></a>
-<!-- END END END END END END END END END END logo END END END END END END END END END END -->  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-  	<span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-  <c:if test = "${member == null}">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active"><a class="nav-link" onclick="location.href='../../member/login'">login</a></li>
-      <li class="nav-item active"><a class="nav-link" onclick="location.href='../../member/join'">Join</a></li>
-   </ul>
-  </c:if>
-  <c:if test = "${member != null}">
-  	<p>${member.name} Dzien Dobry :) </p>
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active"><a class="nav-link" onclick="location.href='../../member/login'" id='logoutBtn'>logout</a></li>
-      <li class="nav-item active"><a class="nav-link" onclick="location.href='../../member/join'">mypage</a></li>
-   </ul>
-  </c:if>
-  <c:if test="${msg == false}">
-  	<p style='color: red;'>login has failed. check your ID and Password.</p>
-  </c:if>
-  </div>
-</div>
+<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ header $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+<nav class="navbar-inverse">
+	  <div class="container-fluid" style="height:120px;">
+	    <div class="collapse navbar-collapse">
+	<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ logo $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+	      <a class="navbar-brand" onclick="location.href='/board/boardList'"> <span style="font-size:60px;" class="glyphicon glyphicon-cloud"></span>
+	      <br><font style="font-size:24px; font-weight:bold;" face = "Comic sans MS" size =" 5">cloud story</font></a>
+	<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ logo END $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+	      <ul class="nav navbar-nav navbar-right">
+		<c:if test="${ member == null }">
+			<li><a onclick="location.href='../member/login'"><span class="glyphicon glyphicon-log-in"></span> login</a></li>
+	        <li><a onclick="location.href='../member/join'"><span class="glyphicon glyphicon-user"></span> 회원가입</a></li>
+	    </c:if>
+	   
+	    <c:if test="${ member != null }">
+	  	<p>${member.name} Dzien Dobry :) </p>
+			<li><a onclick="location.href='../member/logout'"><span class="glyphicon glyphicon-log-in"></span> logout</a></li>
+	        <li><a onclick="location.href='../member/mypage'"><span class="glyphicon glyphicon-user"></span> 회원정보</a></li>
+	        <br>
+	        <p>(${member.name})님 안녕하세요. </p>
+		</c:if>    
+	      </ul>
+		
+	    </div>
+	  </div>
+		<c:if test="${msg == false}">
+			<p style='color: red;'>login has failed. check your ID and Password.</p>
+		</c:if>
 </nav>
+<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ header END $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 
-<br><br><br>
-<!-- https://stackoverflow.com/questions/41513463/bootstrap-4-align-navbar-items-to-the-right  -->
+

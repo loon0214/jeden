@@ -39,8 +39,14 @@ public class MemberController {
 		return "redirect:/board/boardList";
 	}
 	
+	// login Form
+	@RequestMapping(value ="/login", method=RequestMethod.GET)
+	public String login() throws Exception{
+		return "/member/login";
+	}
+	
 	// login
-	@RequestMapping(value ="/login", method = RequestMethod.POST)
+	@RequestMapping(value ="/login", method={RequestMethod.POST})
 	public String login(MemberVO vo, HttpServletRequest request, RedirectAttributes rttr) throws Exception{
 		logger.info("post login");
 		
