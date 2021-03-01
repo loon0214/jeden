@@ -11,7 +11,7 @@
 <%@ include file="../common/header.jsp" %>
 
  
-<div class="container">
+<div class="container" style='padding-left:220px; padding-right:220px;' >
 <h2> Post </h2>
 
     <form action="/boardPostProc" method="post">

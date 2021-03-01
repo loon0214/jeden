@@ -80,8 +80,7 @@ function fn_prev(page, range, rangeSize) {
 	</div>
 	<!-- pagination{e} -->
 </div>
-<div style='margin-bottom:200px;'></div>
- 
+<div style='margin-bottom:-100px;'></div>
  
 <%@ include file="../common/code.jsp" %>
 <%@ include file="../common/footer.jsp" %>

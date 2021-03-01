@@ -8,7 +8,7 @@
 
 <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ footer $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 <br>
-<div style="background: skyblue;"> 
+<div style="background: skyblue; margin-top:170px;"> 
 	<div class="container">
 		<br>
 		<a onclick="location.href='/main'"><font style="font-size:24px; font-weight:bold" face = "Comic sans MS" size =" 5">Web Blog</font></a>
