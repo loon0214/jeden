@@ -15,7 +15,7 @@
 	    </c:if>
 	   
 	    <c:if test="${ member != null }">
-			<li><a onclick="location.href='../member/logout'"><span class="glyphicon glyphicon-log-in"></span> logout</a></li>
+			<li><a onclick="location.href='../../member/logout'"><span class="glyphicon glyphicon-log-in"></span> logout</a></li>
 	        <li><a onclick="location.href='../member/mypage'"><span class="glyphicon glyphicon-user"></span> 회원정보</a></li>
 	        <br>
 	        <p style='text-align: right; color:white;'>Dzień Dobry ${member.name} :) </p>

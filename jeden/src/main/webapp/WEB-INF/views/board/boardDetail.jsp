@@ -32,10 +32,11 @@
         <p>${boardDetail.content}</p>
       </div>
     </form>
-    
-    <button class="btn btn-primary" onclick="location.href='/board/boardEdit/${boardDetail.bno}'">Eidt</button>
-	<button class="btn btn-danger" onclick="location.href='/boardDel/${boardDetail.bno}'">remove</button>
 
+<c:if test='${member.id != null}'>    
+    <button class="btn btn-primary" onclick="location.href='/board/boardEdit/${boardDetail.bno}'">Edit</button>
+	<button class="btn btn-danger" onclick="location.href='/boardDel/${boardDetail.bno}'">remove</button>
+</c:if>
 </div>
  
 <%@ include file="../common/code.jsp" %>

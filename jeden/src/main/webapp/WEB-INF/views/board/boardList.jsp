@@ -40,7 +40,7 @@ function fn_prev(page, range, rangeSize) {
 <body>
 <%@ include file="../common/header.jsp" %>
  
-<div class="container">
+<div class="container" style='padding:100px 0 80px 0;'>
 	<h2> Blog </h2>
     <table class="table table-hover">
         <tr>
@@ -59,9 +59,11 @@ function fn_prev(page, range, rangeSize) {
           </c:forEach>
           
     </table>
-    <p align = 'right'>
-		<button class="btn btn-primary" onclick="location.href='/board/boardPost'">post</button>
-	</p>
+    <c:if test='${member.id != null}'>
+	    <p align = 'right'>
+			<button class="btn btn-primary" onclick="location.href='/board/boardPost'">post</button>
+		</p>
+	</c:if>
 	
 <!-- pagination{s} -->
 	<div id="paginationBox">
@@ -73,8 +75,7 @@ function fn_prev(page, range, rangeSize) {
 				<li class="page-item <c:out value="${pagination.page == bno ? 'active' : ''}"/> "><a class="page-link" href="#" onClick="fn_pagination('${bno}', '${pagination.range}', '${pagination.rangeSize}')"> ${bno} </a></li>
 			</c:forEach>
 			<c:if test="${pagination.next}">
-				<li class="page-item"><a class="page-link" href="#" onClick="fn_next('${pagination.range}', 
-'${pagination.range}', '${pagination.rangeSize}')" >Next</a></li>
+				<li class="page-item"><a class="page-link" href="#" onClick="fn_next('${pagination.range}', '${pagination.range}', '${pagination.rangeSize}')" >Next</a></li>
 			</c:if>
 		</ul>
 	</div>

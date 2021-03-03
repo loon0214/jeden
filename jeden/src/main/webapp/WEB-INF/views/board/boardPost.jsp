@@ -7,7 +7,6 @@
 </head>
 <body>
 <%@ include file="../common/header.jsp" %>
- 
 <div class="container" style='padding-bottom:50px;'>
 <h2> new Post </h2>
     <form action="/boardPostProc" method="post">
