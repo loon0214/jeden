@@ -22,4 +22,9 @@ public class MemberDAO {
 	public MemberVO login(MemberVO vo) throws Exception{
 		return sql.selectOne("login", vo);
 	}
+	
+	// member update
+	public void memberUpdate(MemberVO vo) throws Exception{
+		sql.update("memberUpdate", vo);
+	}
 }

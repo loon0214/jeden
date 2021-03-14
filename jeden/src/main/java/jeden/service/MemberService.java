@@ -22,4 +22,12 @@ public class MemberService {
 	public MemberVO login(MemberVO vo) throws Exception{
 		return dao.login(vo);
 	}
+	
+	// member update
+	public void memberUpdate(MemberVO vo) throws Exception{
+		dao.memberUpdate(vo);
+	}
+	
+	
+	
 }

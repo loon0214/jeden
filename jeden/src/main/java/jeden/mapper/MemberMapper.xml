@@ -17,7 +17,11 @@
 		WHERE ID = #{id} AND PW = #{pw}
 	</select>
 	
-
-	
+	<update id="memberUpdate">
+		UPDATE MEMBER
+		SET	PW = #{pw}, EMAIL = #{email}, NAME = #{name}, PHONE = #{phone}, 
+				 BDAY = #{bday}, ADRES1 = #{adres1}, ADRES2 = #{adres2}, ADRES3 = #{adres3}
+		WHERE ID = #{id}
+	</update>
 	
 </mapper>
